@@ -2,6 +2,8 @@
 -- Selective point lookup queries on tables. A point lookup query returns only one or a small number of distinct rows.
 
 USE ROLE SYSADMIN;
+USE DATABASE SNOWFLAKE_CODE_SAMPLE;
+USE SCHEMA SNOWFLAKE_CODE_SAMPLE.PUBLIC;
 USE WAREHOUSE SCS;
 
 -- 1.- Create a database from the share TPCH_SF1000
