@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1754992429792,
+    "description" : "This integrates Snowflake with an Aviation API using Snowpipe Streaming",
+    "identifier" : "aviation-api",
+    "lastModifiedTimestamp" : 1754992429792,
+    "name" : "aviation-api",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
