@@ -1,0 +1,3 @@
+dbt_etl/dbt_packages/
+dbt_etl/dbt_modules/
+dbt_etl/logs/
