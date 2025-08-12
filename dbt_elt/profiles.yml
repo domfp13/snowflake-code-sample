@@ -1,0 +1,11 @@
+dbt_elt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: SYSADMIN
+      database: SNOWFLAKE_CODE_SAMPLE
+      schema: PUBLIC
+      warehouse: DBT
