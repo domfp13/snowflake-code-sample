@@ -1,3 +1,4 @@
-dbt_etl/dbt_packages/
-dbt_etl/dbt_modules/
-dbt_etl/logs/
+dbt_elt/dbt_packages/
+dbt_elt/dbt_modules/
+dbt_elt/logs/
+dbt_elt/target/
