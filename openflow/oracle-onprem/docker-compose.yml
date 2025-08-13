@@ -1,0 +1,40 @@
+services:
+  oracledb:
+    image: gvenzl/oracle-free:23-slim-faststart
+    container_name: oracledb
+    restart: unless-stopped
+
+    # Publish *only* the Oracle listener (and OEM Express if you really need it for the demo).
+    # This exposes the DB to the internet on your host, but doesn't expose anything else.
+    ports:
+      - "1521:1521"        # Oracle listener (required)
+      # - "5500:5500"      # OEM Express (optional; comment out if not needed)
+
+    environment:
+      # SYS/SYSTEM password (required by the image)
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
+      # Randomizes other internal passwords; mutually exclusive with ORACLE_PASSWORD_FILE.
+      # ORACLE_RANDOM_PASSWORD: "false"
+      APP_USER: ${APP_USER}
+      APP_USER_PASSWORD: ${APP_USER_PASSWORD}
+
+      # Optional: set a custom DB name (PDB creation is handled by the image; default service FREEPDB1)
+      # ORACLE_DATABASE: "DEMODB"
+
+    volumes:
+      # Persist database files so you don't re-init each time
+      - oradata:/opt/oracle/oradata
+      # Run init scripts once when the database is first created The image executes any *.sql, *.sh, *.sql.gz in /container-entrypoint-initdb.d after the database is created the first time. Subsequent restarts won’t re-run them unless you wipe the oradata volume.
+      - ./init:/container-entrypoint-initdb.d:ro
+
+    # Optional healthcheck (the image provides a simple healthcheck script)
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 40s
+
+volumes:
+  oradata:
+    driver: local
