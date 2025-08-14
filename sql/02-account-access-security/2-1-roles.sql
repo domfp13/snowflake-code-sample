@@ -8,6 +8,13 @@ USE ROLE SECURITYADMIN;
 CREATE OR REPLACE ROLE ANALYST
  COMMENT  = 'ANALYST';
 
+ -- CREATE USER
+ CREATE OR REPLACE USER TESTUSER
+ LOGIN_NAME = 'TESTUSER'
+ PASSWORD = 'TESTUSER@123'
+ MUST_CHANGE_PASSWORD = FALSE
+ TYPE = LEGACY_SERVICE;
+
 -- 2.- Take a look ta the user interface to visualize the role
 
 -- 3.- Granting role analyst to role sysadmin
