@@ -40,7 +40,7 @@ LS @SNOWFLAKE_CODE_SAMPLE.PUBLIC.STAGE_INTERNAL_ACCOUNTS;
 
 --****************************** 3.- Downloading to local ******************************
 -- Please refer to the following https://docs.snowflake.com/en/user-guide/data-unload-snowflake
-GET @SNOWFLAKE_CODE_SAMPLE.PUBLIC.STAGE_INTERNAL_ACCOUNTS/TRANSFORMED_ACCOUNTS/data_0_0_0.csv.gz file://///Users/eplata/Developer/personal/snowflake-sample-code/sql/04-unloading;
+GET @SNOWFLAKE_CODE_SAMPLE.PUBLIC.STAGE_INTERNAL_ACCOUNTS/TRANSFORMED_ACCOUNTS/data_0_0_0.csv.gz file://///Users/eplata/Developer/snowflake-code-sample/sql/04-unloading;
 -- gunzip data_0_0_0.csv.gz
 
 RM @SNOWFLAKE_CODE_SAMPLE.PUBLIC.STAGE_INTERNAL_ACCOUNTS/TRANSFORMED_ACCOUNTS/data_0_0_0.csv.gz;
