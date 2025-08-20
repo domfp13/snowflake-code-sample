@@ -1,4 +1,4 @@
-dbt_elt:
+dbt_snow:
   target: dev
   outputs:
     dev:
