@@ -1,4 +1,4 @@
-dbt_elt/dbt_packages/
-dbt_elt/dbt_modules/
-dbt_elt/logs/
-dbt_elt/target/
+dbt/dbt_snow/dbt_packages/
+dbt/dbt_snow/dbt_modules/
+dbt/dbt_snow/logs/
+dbt/dbt_snow/target/
