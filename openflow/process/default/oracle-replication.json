@@ -37,7 +37,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "6a8285ec-cb58-3a0f-88ed-457e29f2b965",
-        "name" : "PutSnowpipeStreaming",
+        "name" : "InsertIntoCustomerTable",
         "type" : "PROCESSOR"
       },
       "zIndex" : 10
@@ -50,7 +50,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "ccb3dc59-d00e-3aa6-ffff-ffff99b38cab",
-        "name" : "JoltTransformRecord",
+        "name" : "ParsedJson",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -67,7 +67,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "dca0843e-78cd-3cdd-99b5-02c495c35b89",
-        "name" : "QueryDatabaseTableRecord",
+        "name" : "ReadOracleCustomerTable",
         "type" : "PROCESSOR"
       },
       "zIndex" : 8
@@ -80,7 +80,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "6a8285ec-cb58-3a0f-88ed-457e29f2b965",
-        "name" : "PutSnowpipeStreaming",
+        "name" : "InsertIntoCustomerTable",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -97,7 +97,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "ccb3dc59-d00e-3aa6-ffff-ffff99b38cab",
-        "name" : "JoltTransformRecord",
+        "name" : "ParsedJson",
         "type" : "PROCESSOR"
       },
       "zIndex" : 9
@@ -795,10 +795,10 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "6a8285ec-cb58-3a0f-88ed-457e29f2b965",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "PutSnowpipeStreaming",
+      "name" : "InsertIntoCustomerTable",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -16.0,
+        "x" : -136.0,
         "y" : 224.0
       },
       "properties" : {
@@ -996,8 +996,8 @@
       "name" : "LogAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -456.0,
-        "y" : 448.0
+        "x" : -536.0,
+        "y" : 432.0
       },
       "properties" : {
         "character-set" : "UTF-8",
@@ -1104,11 +1104,11 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "ccb3dc59-d00e-3aa6-ffff-ffff99b38cab",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "JoltTransformRecord",
+      "name" : "ParsedJson",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -576.0,
-        "y" : 24.0
+        "x" : -608.0,
+        "y" : 0.0
       },
       "properties" : {
         "jolt-record-record-writer" : "1c3aa7f5-453f-3db9-a06b-132123d29cc5",
@@ -1201,7 +1201,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "dca0843e-78cd-3cdd-99b5-02c495c35b89",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "QueryDatabaseTableRecord",
+      "name" : "ReadOracleCustomerTable",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -200.0,
@@ -1425,6 +1425,6 @@
   "snapshotMetadata" : {
     "author" : "OPENFLOWUSER",
     "flowIdentifier" : "oracle-replication",
-    "timestamp" : 1757012200614
+    "timestamp" : 1757012467145
   }
 }
