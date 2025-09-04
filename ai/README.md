@@ -8,7 +8,10 @@ This guide will walk you through setting up your first custom agent in Snowflake
 
 ## Prerequisites
 
-- Create a free [`Snowflake`](https://signup.snowflake.com/) account.
+- Create a free [`Snowflake`](https://signup.snowflake.com/) account. Make sure you select: **Enterprise**, **AWS** & **US West Oregon**
+
+![Tavily Token](img/00-create-snow.jpg)
+
 - Create a free [`Tavily`](https://www.tavily.com/) account.
 
 ---
