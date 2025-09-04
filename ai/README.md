@@ -129,7 +129,7 @@ for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`.
 ![Snowflake Agent Setup Interface](img/12-snowflake-stage.jpg)
 ![Snowflake Agent Setup Interface](img/13-internalstg.jpg)
 
-- Load files the 
+- Donwload and unzip this files [`ai/src/foodimg.zip`](src/foodimg.zip)
 
 ## References
 - [Snowflake External Functions Documentation](https://docs.snowflake.com/en/developer-guide/external-functions/intro)
