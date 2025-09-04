@@ -1,4 +1,4 @@
-# Creating Your First Agent in Snowflake: Step-by-Step Guide
+# 1. Creating Your First Agent in Snowflake: Step-by-Step Guide
 
 This guide will walk you through setting up your first custom agent in Snowflake, using the Tavily Web Search tool as an example. The process includes configuring roles, secrets, network access, and deploying a Python-based stored procedure.
 
@@ -111,6 +111,25 @@ This guide will walk you through setting up your first custom agent in Snowflake
 ![create-looker](img/11-int-prompt.jpg)
 
 ---
+
+# 2. Run Your First AI SQL code on Snowflake: Step-by-Step Guide
+
+This guide will walk you through setting up your first AISQL in Snowflake, using a
+Jupyter Notebook, you will create a Snowflake Stage where you will stored some images, and then you will learn how to work with unstructure data.
+
+---
+## Visual Guide
+
+### Step 1: You can follow the steps visually using the image(s) below.
+- Sign in to the Snowflake web interface and create a new Snowflake Stage with
+Server-side encryption named `FOODIMAGES`. Select the databases `SNOWFLAKE_INTELLIGENCE` & schema `PUBLIC` we already created
+for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`. 
+**IMPORTANT** Make sure you enable `Server-side Encryption`.
+
+![Snowflake Agent Setup Interface](img/12-snowflake-stage.jpg)
+![Snowflake Agent Setup Interface](img/13-internalstg.jpg)
+
+- Load files the 
 
 ## References
 - [Snowflake External Functions Documentation](https://docs.snowflake.com/en/developer-guide/external-functions/intro)
