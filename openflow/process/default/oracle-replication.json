@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1757012199886,
+    "description" : "This flow replicates Oracle data",
+    "identifier" : "oracle-replication",
+    "lastModifiedTimestamp" : 1757012199886,
+    "name" : "oracle-replication",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
