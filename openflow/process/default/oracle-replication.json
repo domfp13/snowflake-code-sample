@@ -107,7 +107,7 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -115,7 +115,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2025.8.7.20"
+          "version" : "2025.9.4.20"
         },
         "type" : "org.apache.nifi.serialization.RecordSetWriterFactory"
       } ],
@@ -276,7 +276,7 @@
       "bundle" : {
         "artifact" : "nifi-dbcp-service-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -284,7 +284,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2025.8.7.20"
+          "version" : "2025.9.4.20"
         },
         "type" : "org.apache.nifi.dbcp.DBCPService"
       } ],
@@ -423,7 +423,7 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -431,7 +431,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2025.8.7.20"
+          "version" : "2025.9.4.20"
         },
         "type" : "org.apache.nifi.serialization.RecordReaderFactory"
       } ],
@@ -568,7 +568,7 @@
       "bundle" : {
         "artifact" : "nifi-key-service-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -576,7 +576,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2025.8.7.20"
+          "version" : "2025.9.4.20"
         },
         "type" : "org.apache.nifi.key.service.api.PrivateKeyService"
       } ],
@@ -618,7 +618,7 @@
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "CONTROLLER_SERVICE",
@@ -626,7 +626,7 @@
         "bundle" : {
           "artifact" : "nifi-standard-services-api-nar",
           "group" : "org.apache.nifi",
-          "version" : "2025.8.7.20"
+          "version" : "2025.9.4.20"
         },
         "type" : "org.apache.nifi.serialization.RecordReaderFactory"
       } ],
@@ -786,7 +786,7 @@
       "bundle" : {
         "artifact" : "runtime-snowpipe-processors-nar",
         "group" : "com.snowflake.openflow.runtime",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -804,7 +804,7 @@
       "properties" : {
         "Account" : "#{account}",
         "User" : "#{user}",
-        "Table" : "ORACLE_CUSTOMERS",
+        "Table" : "ORACLE_ORDERS",
         "Max Batch Size" : "10000",
         "Schema" : "PUBLIC",
         "Max Tasks Per Group" : "1",
@@ -984,7 +984,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1095,7 +1095,7 @@
       "bundle" : {
         "artifact" : "nifi-jolt-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1192,7 +1192,7 @@
       "bundle" : {
         "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
-        "version" : "2025.8.7.20"
+        "version" : "2025.9.4.20"
       },
       "comments" : "",
       "componentType" : "PROCESSOR",
@@ -1208,13 +1208,13 @@
         "y" : -216.0
       },
       "properties" : {
-        "Table Name" : "CUSTOMER",
+        "Table Name" : "ORDERS",
         "db-fetch-db-type" : "Oracle",
         "dbf-default-precision" : "10",
         "qdbtr-record-writer" : "1c3aa7f5-453f-3db9-a06b-132123d29cc5",
         "Max Wait Time" : "0 seconds",
         "Database Connection Pooling Service" : "52b38e33-4387-370b-aa5d-3d37ecb27247",
-        "Maximum-value Columns" : "CUSTOMER_ID",
+        "Maximum-value Columns" : "ORDER_ID",
         "dbf-user-logical-types" : "false",
         "qdbt-output-batch-size" : "0",
         "qdbt-max-rows" : "0",
@@ -1370,7 +1370,7 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "1 min",
+      "schedulingPeriod" : "30 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : {
         "background-color" : "#181ee2"
@@ -1387,6 +1387,7 @@
   "parameterContexts" : {
     "ojdbc-driver" : {
       "componentType" : "PARAMETER_CONTEXT",
+      "description" : "This is the Java Driver",
       "inheritedParameterContexts" : [ ],
       "name" : "ojdbc-driver",
       "parameters" : [ {
@@ -1425,6 +1426,6 @@
   "snapshotMetadata" : {
     "author" : "OPENFLOWUSER",
     "flowIdentifier" : "oracle-replication",
-    "timestamp" : 1757012467145
+    "timestamp" : 1757167449472
   }
 }
