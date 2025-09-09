@@ -52,11 +52,11 @@ This guide will walk you through setting up your first custom agent in Snowflake
 
 - Select the agent (LOOKER) to enhance, Click **Edit**
 
-![create-looker](img/08-edit-looker.jpg)
+![edit looker](img/08-edit-looker.jpg)
 
 - Go to the **Tools** section, find **Custom tools** and click **+ Add**
 
-![create-looker](img/09-add-tool.jpg)
+![add tool](img/09-add-tool.jpg)
 
 1. Configure the custom tool:
    - **Name**: `TavilyWebSearch`
@@ -107,8 +107,8 @@ This guide will walk you through setting up your first custom agent in Snowflake
     Latest News about Snowflake, September 2025
     ```
 
-![create-looker](img/10-snowflake-int.jpg)
-![create-looker](img/11-int-prompt.jpg)
+![snowflake int](img/10-snowflake-int.jpg)
+![int prompt](img/11-int-prompt.jpg)
 
 ---
 
@@ -126,14 +126,25 @@ Server-side encryption named `FOODIMAGES`. Select the databases `SNOWFLAKE_INTEL
 for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`. 
 **IMPORTANT** Make sure you enable `Server-side Encryption`.
 
-![Snowflake Agent Setup Interface](img/12-snowflake-stage.jpg)
-![Snowflake Agent Setup Interface](img/13-internalstg.jpg)
+![snowflake stage](img/12-snowflake-stage.jpg)
 
-- Donwload and unzip this files [`ai/src/foodimg.zip`](src/foodimg.zip)
+![internal stg](img/13-internalstg.jpg)
+
+- Donwload and unzip the file [`ai/src/foodimg.zip`](src/foodimg.zip)
+
+![zip download](img/14-zipdownload.jpg)
+
+- Donwload the snowbooks_extra.py file [`ai/snowbooks_extras.py`](snowbooks_extras.py)
+
+- Upload the images to the Stage `FOODIMAGES`, Select ALL images and upload them.
+
+![15 load files](img/15-loadfiles.jpg)
+
+![stg load all](img/16-loadall.jpg)
+
 
 ## References
 - [Snowflake External Functions Documentation](https://docs.snowflake.com/en/developer-guide/external-functions/intro)
-- [Tavily API Documentation](https://docs.tavily.com/)
 
 ---
 
