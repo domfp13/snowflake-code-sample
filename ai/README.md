@@ -130,17 +130,33 @@ for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`.
 
 ![internal stg](img/13-internalstg.jpg)
 
-- Donwload and unzip the file [`ai/src/foodimg.zip`](src/foodimg.zip)
+- Donwload and unzip the file with FOODIMAGES [`ai/src/foodimg.zip`](src/foodimg.zip)
 
 ![zip download](img/14-zipdownload.jpg)
 
 - Donwload the snowbooks_extra.py file [`ai/snowbooks_extras.py`](snowbooks_extras.py)
+
+![Snowbooks](img/17-snowbookspy.jpg)
+
+- Download the Jupyter Notebook [`ai/AISQL-Rest.ipynb`](AISQL-Rest.ipynb)
+
+![Snowbooks](img/18-jupyter-download.jpg)
 
 - Upload the images to the Stage `FOODIMAGES`, Select ALL images and upload them.
 
 ![15 load files](img/15-loadfiles.jpg)
 
 ![stg load all](img/16-loadall.jpg)
+
+- Create a new notebook (We are going to import the notebook we downloaded before) !!!IMPORTANT!!! make sure you IMPORT the notebook.
+DATABASE: SNOWFLAKE_INTELLIGENCE & SCHEMA: PUBLIC
+
+![notebook-loader](img/19-uploadnotebook.jpg)
+![notebook-setup](img/20-notebooksetup.jpg)
+
+- The last step is to upload our python code (`snowbooks_extras.py`), this allows users to upload their own python code to notebooks.
+
+![load-python-lib](img/21-upload-snowbooks.jpg)
 
 
 ## References
