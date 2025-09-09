@@ -1,4 +1,4 @@
-# Creating Your First Agent in Snowflake: Step-by-Step Guide
+# 1. Creating Your First Agent in Snowflake: Step-by-Step Guide
 
 This guide will walk you through setting up your first custom agent in Snowflake, using the Tavily Web Search tool as an example. The process includes configuring roles, secrets, network access, and deploying a Python-based stored procedure.
 
@@ -52,11 +52,11 @@ This guide will walk you through setting up your first custom agent in Snowflake
 
 - Select the agent (LOOKER) to enhance, Click **Edit**
 
-![create-looker](img/08-edit-looker.jpg)
+![edit looker](img/08-edit-looker.jpg)
 
 - Go to the **Tools** section, find **Custom tools** and click **+ Add**
 
-![create-looker](img/09-add-tool.jpg)
+![add tool](img/09-add-tool.jpg)
 
 1. Configure the custom tool:
    - **Name**: `TavilyWebSearch`
@@ -107,14 +107,60 @@ This guide will walk you through setting up your first custom agent in Snowflake
     Latest News about Snowflake, September 2025
     ```
 
-![create-looker](img/10-snowflake-int.jpg)
-![create-looker](img/11-int-prompt.jpg)
+![snowflake int](img/10-snowflake-int.jpg)
+![int prompt](img/11-int-prompt.jpg)
 
 ---
 
+# 2. Run Your First AI SQL code on Snowflake: Step-by-Step Guide
+
+This guide will walk you through setting up your first AISQL in Snowflake, using a
+Jupyter Notebook, you will create a Snowflake Stage where you will stored some images, and then you will learn how to work with unstructure data.
+
+---
+## Visual Guide
+
+### Step 1: You can follow the steps visually using the image(s) below.
+- Sign in to the Snowflake web interface and create a new Snowflake Stage with
+Server-side encryption named `FOODIMAGES`. Select the databases `SNOWFLAKE_INTELLIGENCE` & schema `PUBLIC` we already created
+for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`. 
+**IMPORTANT** Make sure you enable `Server-side Encryption`.
+
+![snowflake stage](img/12-snowflake-stage.jpg)
+
+![internal stg](img/13-internalstg.jpg)
+
+- Donwload and unzip the file with FOODIMAGES [`ai/src/foodimg.zip`](src/foodimg.zip)
+
+![zip download](img/14-zipdownload.jpg)
+
+- Donwload the snowbooks_extra.py file [`ai/snowbooks_extras.py`](snowbooks_extras.py)
+
+![Snowbooks](img/17-snowbookspy.jpg)
+
+- Download the Jupyter Notebook [`ai/AISQL-Rest.ipynb`](AISQL-Rest.ipynb)
+
+![pythonNotebook](img/18-jupyter-download.jpg)
+
+- Upload the images to the Stage `FOODIMAGES`, Select ALL images and upload them.
+
+![15 load files](img/15-loadfiles.jpg)
+
+![stg load all](img/16-loadall.jpg)
+
+- Create a new notebook (We are going to import the notebook we downloaded before) !!!IMPORTANT!!! make sure you IMPORT the notebook.
+DATABASE: SNOWFLAKE_INTELLIGENCE & SCHEMA: PUBLIC
+
+![notebook-loader](img/19-uploadnotebook.jpg)
+![notebook-setup](img/20-notebooksetup.jpg)
+
+- The last step is to upload our python code (`snowbooks_extras.py`), this allows users to upload their own python code to notebooks.
+
+![load-python-lib](img/21-upload-snowbooks.jpg)
+
+
 ## References
 - [Snowflake External Functions Documentation](https://docs.snowflake.com/en/developer-guide/external-functions/intro)
-- [Tavily API Documentation](https://docs.tavily.com/)
 
 ---
 
