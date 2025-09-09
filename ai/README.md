@@ -140,7 +140,7 @@ for the agent `SNOWFLAKE_INTELLIGENCE.PUBLIC`.
 
 - Download the Jupyter Notebook [`ai/AISQL-Rest.ipynb`](AISQL-Rest.ipynb)
 
-![Snowbooks](img/18-jupyter-download.jpg)
+![pythonNotebook](img/18-jupyter-download.jpg)
 
 - Upload the images to the Stage `FOODIMAGES`, Select ALL images and upload them.
 
