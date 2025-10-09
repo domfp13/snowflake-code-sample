@@ -1,0 +1,123 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: "Cleaned and standardized customer data from raw_customer table"
+    columns:
+      - name: customer_key
+        description: "Unique identifier for each customer"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Customer name"
+        data_tests:
+          - not_null
+      - name: customer_address
+        description: "Customer address"
+      - name: nation_key
+        description: "Foreign key to nation table"
+      - name: phone_number
+        description: "Customer phone number"
+      - name: account_balance
+        description: "Customer account balance"
+        data_tests:
+          - not_null
+      - name: market_segment
+        description: "Market segment classification"
+      - name: customer_comment
+        description: "Additional customer comments"
+
+  - name: stg_orders
+    description: "Cleaned and standardized orders data from raw_orders table"
+    columns:
+      - name: order_key
+        description: "Unique identifier for each order"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: "Foreign key to customer table"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customer')
+              field: customer_key
+      - name: order_status
+        description: "Status of the order (O=Open, F=Fulfilled, P=Pending)"
+        data_tests:
+          - accepted_values:
+              values: ['O', 'F', 'P']
+      - name: total_price
+        description: "Total price of the order"
+        data_tests:
+          - not_null
+      - name: order_date
+        description: "Date the order was placed"
+        data_tests:
+          - not_null
+      - name: order_priority
+        description: "Priority level of the order"
+      - name: order_clerk
+        description: "Clerk who processed the order"
+      - name: ship_priority
+        description: "Shipping priority"
+      - name: order_month
+        description: "Month when order was placed (derived)"
+      - name: order_year
+        description: "Year when order was placed (derived)"
+
+  - name: stg_lineitem
+    description: "Cleaned and standardized line item data from raw_lineitem table"
+    columns:
+      - name: order_key
+        description: "Foreign key to orders table"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_key
+      - name: line_number
+        description: "Line number within the order"
+        data_tests:
+          - not_null
+      - name: part_key
+        description: "Foreign key to part table"
+      - name: supplier_key
+        description: "Foreign key to supplier table"
+      - name: quantity
+        description: "Quantity ordered"
+        data_tests:
+          - not_null
+      - name: extended_price
+        description: "Extended price (quantity * unit price)"
+        data_tests:
+          - not_null
+      - name: discount
+        description: "Discount percentage applied"
+      - name: tax
+        description: "Tax rate applied"
+      - name: return_flag
+        description: "Return flag (R=Returned, A=Accepted, N=Not returned)"
+        data_tests:
+          - accepted_values:
+              values: ['R', 'A', 'N']
+      - name: line_status
+        description: "Line status (O=Open, F=Fulfilled)"
+        data_tests:
+          - accepted_values:
+              values: ['O', 'F']
+      - name: ship_date
+        description: "Date the item was shipped"
+      - name: commit_date
+        description: "Committed delivery date"
+      - name: receipt_date
+        description: "Date the item was received"
+      - name: discounted_price
+        description: "Price after discount applied (calculated field)"
+      - name: final_price
+        description: "Final price including tax (calculated field)"
+      - name: days_late_early
+        description: "Days late (positive) or early (negative) from commit date"
+      - name: delivery_days
+        description: "Number of days from ship to receipt"

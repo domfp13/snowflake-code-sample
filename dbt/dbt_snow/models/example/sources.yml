@@ -1,0 +1,15 @@
+---
+version: 2
+
+sources:
+  - name: example
+    database: |
+      {%- if  target.name == "DEV" -%} SNOWFLAKE_CODE_SAMPLE
+      {%- elif target.name == "PROD" -%} SNOWFLAKE_CODE_SAMPLE
+      {%- else -%} invalid_database
+      {%- endif -%}
+    schema: PUBLIC
+    tables:
+      - name: raw_customer
+      - name: raw_orders
+      - name: raw_lineitem

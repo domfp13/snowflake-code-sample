@@ -26,11 +26,26 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
+# Model configurations by layer
 models:
   dbt_snow:
-    # Config indicated by + and applies to all files under models/example/
+    # Example models (original dbt examples)
     example:
       +materialized: view
+    
+    # Staging layer - fast refreshing views for data cleaning
+    staging:
+      +materialized: view
+    
+    # Marts layer - materialized tables for performance
+    marts:
+      +materialized: table
+      # Customer analytics
+      customer_analytics:
+        +materialized: table
+      # Order analytics  
+      order_analytics:
+        +materialized: table
+      # Business metrics
+      business_metrics:
+        +materialized: table
