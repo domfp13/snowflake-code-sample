@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: customer_insights
+    description: "Customer analysis combining all data sources - shows lifetime value, order patterns, and customer segments"
+    columns:
+      - name: customer_key
+        description: "Unique customer identifier"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Customer name"
+      - name: market_segment
+        description: "Market segment (BUILDING, AUTOMOBILE, etc.)"
+      - name: total_orders
+        description: "Total number of orders placed by customer"
+      - name: lifetime_value
+        description: "Total revenue from customer (order header totals)"
+      - name: total_revenue_with_tax
+        description: "Total revenue including tax (from line items)"
+      - name: return_rate_percent
+        description: "Percentage of items returned by this customer"
+      - name: customer_segment
+        description: "Customer value classification (High/Medium/Low Value)"
+
+  - name: monthly_performance
+    description: "Monthly business performance metrics combining orders, customers, and line items"
+    columns:
+      - name: order_month
+        description: "Month of analysis"
+        data_tests:
+          - not_null
+      - name: total_orders
+        description: "Number of orders placed in the month"
+      - name: unique_customers
+        description: "Number of unique customers who ordered"
+      - name: gross_revenue
+        description: "Total revenue from order headers"
+      - name: net_revenue
+        description: "Revenue after discounts applied"
+      - name: revenue_with_tax
+        description: "Final revenue including tax"
+      - name: return_rate_percent
+        description: "Percentage of items returned in the month"
+      - name: on_time_delivery_percent
+        description: "Percentage of shipments delivered on time or early"
