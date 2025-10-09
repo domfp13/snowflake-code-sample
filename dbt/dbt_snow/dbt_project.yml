@@ -37,15 +37,6 @@ models:
     staging:
       +materialized: view
     
-    # Marts layer - materialized tables for performance
+    # Marts layer - materialized tables for business analysis
     marts:
       +materialized: table
-      # Customer analytics
-      customer_analytics:
-        +materialized: table
-      # Order analytics  
-      order_analytics:
-        +materialized: table
-      # Business metrics
-      business_metrics:
-        +materialized: table
