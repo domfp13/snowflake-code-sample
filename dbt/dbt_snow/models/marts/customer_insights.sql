@@ -25,7 +25,7 @@ select
     -- Returns analysis
     sum(case when l.return_flag = 'R' then 1 else 0 end) as returned_items,
     round(
-        sum(case when l.return_flag = 'R' then 1 else 0 end) * 100.0 / count(l.line_number), 2
+        sum(case when l.return_flag = 'R' then 1 else 0 end) * 100.0 / nullif(count(l.line_number), 0), 2
     ) as return_rate_percent,
     
     -- Customer classification
