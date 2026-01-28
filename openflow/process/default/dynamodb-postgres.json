@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1769625042643,
+    "description" : "This is a flow that moves data from dynamodb to Postgres db",
+    "identifier" : "dynamodb-postgres",
+    "lastModifiedTimestamp" : 1769625042643,
+    "name" : "dynamodb-postgres",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
