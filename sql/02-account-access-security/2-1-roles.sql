@@ -3,26 +3,30 @@ USE DATABASE SNOWFLAKE_CODE_SAMPLE;
 USE SCHEMA PUBLIC;
 USE WAREHOUSE SCS;
 
+-- 0.- Remove secondary roles from the owner user
+ALTER USER <YOUR_USER> SET DEFAULT_SECONDARY_ROLES = ();
+--ALTER USER <YOUR_USER> SET DEFAULT_SECONDARY_ROLES = ('ALL'); -- This will restore previous behavior
+
 -- 1.- Creating a custom role analyst AND see the hierarchy in the UI
 USE ROLE SECURITYADMIN;
 CREATE OR REPLACE ROLE ANALYST
  COMMENT  = 'ANALYST';
 
  -- CREATE USER
- USE ROLE USERADMIN;
- CREATE OR REPLACE USER TESTUSERRBAC
- LOGIN_NAME = 'TESTUSERRBAC'
- PASSWORD = 'TESTUSERRBAC@1_23'
- MUST_CHANGE_PASSWORD = FALSE
- DEFAULT_SECONDARY_ROLES = ()
- TYPE = LEGACY_SERVICE;
+--  USE ROLE USERADMIN;
+--  CREATE OR REPLACE USER TESTUSERRBAC
+--  LOGIN_NAME = 'TESTUSERRBAC'
+--  PASSWORD = 'TESTUSERRBAC@1_23'
+--  MUST_CHANGE_PASSWORD = FALSE
+--  DEFAULT_SECONDARY_ROLES = ()
+--  TYPE = LEGACY_SERVICE;
 
 -- 2.- Take a look ta the user interface to visualize the role AND open a new private window browser and login using the TESTUSER credentials.
 
 -- 3.- Granting role analyst to role sysadmin
 USE ROLE SECURITYADMIN;
 GRANT ROLE ANALYST TO ROLE SYSADMIN;
-GRANT ROLE ANALYST TO USER TESTUSERRBAC;
+-- GRANT ROLE ANALYST TO USER TESTUSERRBAC;
 GRANT ROLE ANALYST TO USER <YOUR_USER>; -- Change this and use your user SELECT CURRENT_USER();
 
 -- 4.- Assume the new role IN THE new Private Window browser you will see that it fails
