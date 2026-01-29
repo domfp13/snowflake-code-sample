@@ -19,36 +19,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "7caa5661-4578-3b0a-919b-0cd47fadc0ed",
-        "name" : "Funnel",
-        "type" : "FUNNEL"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0f2adf5f-3c2f-3b4e-923c-0b4122209351",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "46992883-34db-359d-902e-6251568454db",
-        "name" : "GetDynamoDB",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 2
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "46992883-34db-359d-902e-6251568454db",
         "name" : "GetDynamoDB",
         "type" : "PROCESSOR"
@@ -101,6 +71,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 6
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7caa5661-4578-3b0a-919b-0cd47fadc0ed",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "45024633-7776-3574-b04c-f3d6801539a4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "46992883-34db-359d-902e-6251568454db",
+        "name" : "GetDynamoDB",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 9
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -445,7 +445,7 @@
         "Range Key Value" : "${MFG_PLANT_ID_VALUE}",
         "Communications Timeout" : "30 secs",
         "Region" : "us-east-1",
-        "Json Document" : "doc",
+        "Json Document" : "doc_s",
         "Batch Items Per Request" : "1",
         "Hash Key Value" : "${ORDER_ID_VALUE}",
         "Range Key Value Type" : "string"
@@ -944,7 +944,7 @@
         "name" : "dynamo_keys_json",
         "provided" : false,
         "sensitive" : false,
-        "value" : "[\n  {\"ORDER_ID_VALUE\": 51, \"MFG_PLANT_ID_VALUE\": \"20121\"},\n  {\"ORDER_ID_VALUE\": 52, \"MFG_PLANT_ID_VALUE\": \"20121\"}\n]"
+        "value" : "[\n  {\"ORDER_ID_VALUE\": 1, \"MFG_PLANT_ID_VALUE\": \"1001\"},\n  {\"ORDER_ID_VALUE\": 2, \"MFG_PLANT_ID_VALUE\": \"1002\"}\n]"
       }, {
         "description" : "",
         "name" : "dynamodb_table_name",
@@ -958,6 +958,6 @@
   "snapshotMetadata" : {
     "author" : "OPENFLOWUSER",
     "flowIdentifier" : "dynamodb-postgres",
-    "timestamp" : 1769625043398
+    "timestamp" : 1769710544807
   }
 }
