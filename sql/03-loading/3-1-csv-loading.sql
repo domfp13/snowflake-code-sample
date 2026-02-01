@@ -43,12 +43,18 @@ CREATE OR REPLACE TABLE SNOWFLAKE_CODE_SAMPLE.RAW.ACCOUNTS_RAW
     FILE_ROW_NUMBER                            VARCHAR
 );
 
+DESCRIBE TABLE SNOWFLAKE_CODE_SAMPLE.RAW.ACCOUNTS_RAW; -- Be mindful of the columns and data type and it's length if you do not use the correct length.
+
 -- COPY INTO TABLE
 COPY INTO SNOWFLAKE_CODE_SAMPLE.RAW.ACCOUNTS_RAW
     FROM @SNOWFLAKE_CODE_SAMPLE.RAW.FILES_STAGE
     FILE_FORMAT = (FORMAT_NAME = SNOWFLAKE_CODE_SAMPLE.RAW.CSV_UNLOADING_FORMAT)
     ON_ERROR = 'CONTINUE'
     PURGE = FALSE;
+
+-- IMPORTANT: Snowflake will keep track on the metadata of the files that are loaded into the table for 64 days.
+-- this prevents the same file from being loaded into the table again.
+SELECT * FROM SNOWFLAKE_CODE_SAMPLE.INFORMATION_SCHEMA.LOAD_HISTORY LIMIT 100;
 
 -- SELECT FROM TABLE
 SELECT * FROM SNOWFLAKE_CODE_SAMPLE.RAW.ACCOUNTS_RAW;
