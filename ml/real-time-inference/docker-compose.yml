@@ -1,0 +1,9 @@
+services:
+  fraud-inference:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - SNOWFLAKE_PAT=${SNOWFLAKE_PAT}
+      - INFERENCE_URL=${INFERENCE_URL}
+      - PORT=3000
