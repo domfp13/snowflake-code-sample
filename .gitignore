@@ -2,3 +2,7 @@ dbt/dbt_snow/dbt_packages/
 dbt/dbt_snow/dbt_modules/
 dbt/dbt_snow/logs/
 dbt/dbt_snow/target/
+
+# Node.js
+node_modules/
+.env
